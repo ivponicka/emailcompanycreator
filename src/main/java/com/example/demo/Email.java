@@ -34,4 +34,15 @@ public class Email {
                 return " ";
         }
     }
+
+    private String generatePassword(int length){
+        String availableSet = "ABCDEFGHIJKLMNOPRSTUWYXZ1234567890@#$%&*";
+        char[] password = new char[length];
+
+        for(int i=0; i<length; i++){
+        int randomValue = (int) (Math.random() * availableSet.length());
+        password[i] = availableSet.charAt(randomValue);
+        }
+        return new String(password);
+    }
 }
